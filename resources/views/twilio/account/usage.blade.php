@@ -55,6 +55,14 @@
             </table>
         @endif
     </div>
-</div>
+</main>
+<footer>
+    <section>
+        &copy; Twilio {{ date('Y') }}.
+        Designed and developed by <a href="https://matthewsetter.com"
+                                     target="_blank"
+                                     class="underline underline-offset-2 decoration-2 decoration-indigo-700">Matthew Setter</a>.
+    </section>
+</footer>
 </body>
 </html>
