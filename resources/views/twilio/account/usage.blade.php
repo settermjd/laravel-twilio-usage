@@ -73,5 +73,6 @@
                                      class="underline underline-offset-2 decoration-2 decoration-indigo-700">Matthew Setter</a>.
     </section>
 </footer>
+@vite('resources/js/app.js')
 </body>
 </html>
