@@ -36,10 +36,8 @@
                     <th>Amount</th>
                 </tr>
                 </thead>
-                @foreach($usage_records as $record)
-                    @php
-                        $currency = \strtoupper($record->priceUnit);
-                    @endphp
+                @foreach($usageRecords as $record)
+                    @php $currency = \strtoupper($record->priceUnit); @endphp
                     <tbody>
                     <tr>
                         <td class="font-bold">{{ $record->category }}</td>
