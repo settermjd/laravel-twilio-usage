@@ -52,8 +52,19 @@
                     </tr>
                     </tbody>
                 @endforeach
+                <tfoot>
+                <tr>
+                    <td colspan="4">
+                        @if($recordCount)
+                            {{ $recordCount }} record{{ ($recordCount > 1) ? 's' : '' }} available.
+                        @else
+                            No records available
+                        @endif
+                    </td>
+                </tr>
+                </tfoot>
             </table>
-        @endif
+        </div>
     </div>
 </main>
 <footer>
