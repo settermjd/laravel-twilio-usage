@@ -42,6 +42,7 @@ class TwilioUsageController extends Controller
         return view(
             'twilio.account.usage',
             [
+                'title' => 'Twilio Account Usage',
                 'usageRecords' => $filteredRecords,
                 'recordCount' => iterator_count($filteredRecords)
             ]
