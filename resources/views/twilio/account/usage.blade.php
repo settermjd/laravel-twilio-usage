@@ -14,16 +14,25 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
     @vite('resources/css/app.css')
 </head>
-<body class="antialiased">
-<div
-    class="relative sm:flex sm:flex-col sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-    <div class="mt-16 px-0 sm:justify-between px-6 lg:px-0 w-full lg:w-3/4 lg:max-w-6xl">
-        <h1 class="text-xl font-bold">Twilio Account Usage</h1>
-        <p class="text-base mt-2">A list of your account usage for the last month.</p>
-    </div>
-    <div class="flex justify-center mt-8 sm:items-center sm:justify-between px-4 lg:px-0 w-full lg:w-3/4 lg:max-w-6xl">
-        @if (count($usage_records))
-            <table class="w-full">
+<body>
+<main>
+    <div class="content-wrapper">
+        <header>
+            <div class="flex-auto">
+                <h1 class="text-xl font-bold">{{ $title }}</h1>
+                <p class="text-base mt-2">A list of your current account usage.</p>
+            </div>
+            <div class="flex-none mr-4 mt-3">
+                <img src="/img/twilio-logo.svg"
+                      alt="Twilio's logo"
+                      class="w-12">
+            </div>
+        </header>
+
+        <div id="usageTypeForm"></div>
+
+        <div class="usage-records-wrapper">
+            <table class="w-full" id="usageRecords">
                 <thead>
                 <tr>
                     <th>Category</th>

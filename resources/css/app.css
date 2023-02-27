@@ -2,17 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+    body {
+        @apply antialiased bg-gray-100 p-3;
+    }
     th {
         @apply text-left;
     }
     th, td {
-        @apply py-5 px-3;
+        @apply py-1 px-2 md:py-3 lg:py-5 lg:px-3;
     }
     thead {
-        @apply border-b-2 border-slate-300
+        @apply border-b-2 border-slate-300 font-bold;
     }
     tbody tr {
-        @apply border-b-2 border-slate-200
+        @apply border-b-2 border-slate-200;
+    }
+    tfoot tr td {
+        @apply py-2 lg:pb-1 text-sm text-slate-600 font-semibold;
+    }
+    main {
+        @apply relative lg:flex lg:flex-col lg:items-center bg-center selection:bg-red-500 selection:text-white lg:mt-8 mb-3 lg:mb-6;
+    }
+    header {
+        @apply w-full flex flex-row;
+    }
+    footer {
+        @apply lg:flex lg:flex-col lg:items-center mb-4 lg:mb-8;
+    }
+    footer section {
+        @apply w-full lg:w-3/4 lg:max-w-6xl ml-1 text-slate-700 text-sm text-center md:text-left;
+    }
+}
+
+@layer components {
+    .content-wrapper {
+        @apply w-full lg:w-3/4 lg:max-w-6xl bg-white py-2 md:py-3 lg:py-4 lg:px-5 border-2 border-slate-300 rounded-md drop-shadow-md;
+    }
+    .usage-records-wrapper {
+        @apply flex justify-center mt-2 sm:items-center sm:justify-between px-3 md:px-4 lg:px-0 w-full;
+    }
+
+    #usageTypeForm {
+        @apply mt-4 sm:justify-between px-4 md:px-6 lg:px-0 w-full;
     }
 }
