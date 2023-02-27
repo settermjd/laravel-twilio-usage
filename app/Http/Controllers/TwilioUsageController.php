@@ -29,11 +29,13 @@ class TwilioUsageController extends Controller
         $recordsIterator->uasort(function ($recordOne, $recordTwo) {
             return ($recordOne->category >= $recordTwo->category);
         });
+        $filteredRecords = new UsageWithCountFilter($recordsIterator);
 
         return view(
             'twilio.account.usage',
             [
-                'usage_records' => new UsageWithCountFilter($recordsIterator)
+                'usageRecords' => $filteredRecords,
+                'recordCount' => iterator_count($filteredRecords)
             ]
         );
     }
