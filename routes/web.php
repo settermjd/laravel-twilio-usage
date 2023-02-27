@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(
-    '/twilio/account/usage/{recordLimit}',
-    TwilioUsageController::class
-);
+Route::prefix('twilio')->group(function () {
+    Route::get(
+        '/usage/{recordLimit}/{usageType?}',
+        TwilioUsageController::class
+    )
+        ->whereIn('usageType', ['last_month', 'today', 'all_time'])
+        ->name('usage');
+});
